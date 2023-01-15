@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Google Advanced Search</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div style="margin-inline-end: 500px; float: left;">
+            <img class = "google_advanced_logo" src="google_logo.jpg" alt="Google logo">
+        </div>
+
+        <ul class = "clickable_link">
+            <li>
+                <a href="index.html">Go back to Google</a>
+            </li>
+        </ul>
+
+        <br>
+
+        <div style = "color: crimson; font-size: 20px; padding-left: 40px; padding-bottom: 15px;">
+            Advanced Search
+        </div>
+
+        <hr style="padding-bottom: 15px;"> 
+
+        <div>
+            <form class="advanced_search_form" action="https://google.com/search">
+                <div style="font-size: 18px; padding-bottom: 15px;">
+                    Find pages with...
+                </div>
+
+                <div class="advanced_search_div">
+                    <label class="advanced_search_label">all these words:</label>
+                    <input class="advanced_search_box" type="text" name="as_q" autofocus="autofocus">
+                </div>
+
+                <div class="advanced_search_div">
+                    <label class="advanced_search_label">this exact word or phrase:</label>
+                    <input class="advanced_search_box" type="text" name="as_epq">
+                </div>
+
+                <div class="advanced_search_div">
+                    <label class="advanced_search_label">any of these words:</label>
+                    <input class="advanced_search_box" type="text" name="as_oq">
+                </div>
+
+                <div class="advanced_search_div">
+                    <label class="advanced_search_label">none of these words:</label>
+                    <input class="advanced_search_box" type="text" name="as_eq">
+                </div>
+
+                <div style="display: table-row;">
+                    <label style="display: table-cell;"></label>
+                    <input style="display: tabel-cell; float: right;" type="submit" value="Advanced Search" class="btn btn-primary" data-toggle="button">
+                </div>
+            </form>
+
+            <div style="float: left; margin-left: 20px; font-size: 13px;">
+                <br>
+                <p style="font-size: 15px; font-weight: 500; color:	#505050; margin-top:10px; margin-bottom: 30px;">To do this in the search box.</p>
+                <p style="font-size: 13px; margin-bottom: 30px;">Type the important words: tri-colour rat terrier</p>
+                <p style="font-size: 13px; margin-bottom: 30px;">Put exact words in quotes: "rat terrier"</p>
+                <p style="font-size: 13px; margin-bottom: 25px;">Type OR between all the words you want: miniature OR standard</p>
+                <p style="font-size: 13px;">Put a minus sign just before words that you don't want:<br>-rodent, -"Jack Russell"</p>
+            </div>
+        </div>
+    </body>
+
+</html>

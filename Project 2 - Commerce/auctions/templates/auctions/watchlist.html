@@ -1,0 +1,24 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Watchlist</h2>
+
+    {% for listing in listings %}
+    <div style="border: solid lightgrey 1px; margin-bottom: 10px; height: 300px; overflow: auto;">
+        <div style="width: 500px; float: left; text-align: center;">
+            <img src={{listing.image_url}} alt="Listing image" style="height: 290px; max-width: 100%; object-fit: contain;">
+        </div>
+        <div style="margin-left: 520px; padding-top: 20px;">
+            <a href="{% url 'listing_page' listing.id %}">
+                <h4>{{listing.title}}</h4>
+                <h4>Price: ${{listing.current_bid}}</h4>
+            </a>
+            {% if not listing.active %}
+                <div class="alert alert-danger" role="alert">Listing is no longer active.</div>
+            {% endif %}
+            <br>
+            {{listing.description}}
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

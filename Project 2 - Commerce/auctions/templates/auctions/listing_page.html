@@ -1,0 +1,102 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if not listing.active %}
+        <div class="alert alert-danger" role="alert">Listing is no longer active.</div>
+        {% if highest_bidder == request.user %}
+            <div class="alert alert-success" role="alert">Congratulations! You've won the auction!</div>
+        {% endif %}
+    {% endif %}
+
+    {% if bid_success == "Pass" %}
+        <div class="alert alert-success" role="alert">You've successfully made a bid!</div>
+    {% elif bid_success == "Fail" %}
+        <div class="alert alert-danger" role="alert">Your bid is unsuccessful! Your bid must be as large as the starting bid and greater than other bids placed.</div>
+    {% endif %}
+
+    <h2 style="margin-bottom: 20px;">Listing: {{listing.title}}</h2>
+
+    {% if user.is_authenticated and listing.active %}
+        {% if is_watch %}
+            <a href="{% url 'unwatch' listing.id %}" class="btn btn-primary">Remove from watchlist</a>
+        {% else %}
+            <a href="{% url 'watching' listing.id %}" class="btn btn-light">Add to watchlist</a>
+        {% endif %}
+    {% endif %}
+
+    <div style="height: 400px; margin-top: 30px;">
+        <img src={{listing.image_url}} alt="Listing image" style="height: 400px; max-width: 100%; object-fit: contain; padding-left: 20px;">
+    </div>
+    <br>
+    {{listing.description}}
+    <br>
+    <h4 style="margin-top: 30px;">${{listing.current_bid}}</h4>
+
+    {% if num_bids == 0 %}
+        0 bid(s) so far.
+    {% elif request.user == highest_bidder %}
+        {{ num_bids }} bid(s) so far. Your bid is the current bid.
+    {% elif request.user == listing.username %}
+        {{ num_bids }} bid(s) so far. Your starting bid is ${{listing.bid}}.
+    {% else %}
+        {{ num_bids }} bid(s) so far. Your bid is not the current bid.
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        {% if not listing.active %}
+            {{ dummy_form }}
+        {% elif request.user == listing.username %}
+            {{ dummy_form }}
+        {% else %}
+            <form action="{% url 'listing_page' listing.id %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <br>
+                <input type = "submit" value="Place bid" class="btn btn-primary" style="margin-top: 10px;">
+            </form>
+        {% endif %}
+
+        {% if request.user == listing.username %}
+            <a href="{% url 'closebid' listing.id %}" class="btn btn-primary" style="margin-top: 10px;">Close bid</a>
+        {% endif %}
+    {% endif %}
+
+    <div style="margin-top: 20px;">
+        <h4>Details</h4>
+        <ul>
+            <li>Listed by: {{listing.username}}</li>
+            <li>Category: {{listing.category}}</li>
+        </ul>
+    </div>
+
+    <br>
+
+    <div>
+        <h4>Comments:</h4>
+        {% if user.is_authenticated and listing.active %}
+            <form action="{% url 'comment' listing.id %}" method="post">
+                {% csrf_token %}
+                {{ comment_form }}
+                <br>
+                <input type = "submit" value="Comment" class="btn btn-primary" style="margin-top: 10px;">
+            </form>
+        {% endif %}
+
+        <hr>
+
+        {% if not all_comments.exists %}
+            There are no comments.
+        {% else %}
+            {% for comment in all_comments %}
+                <div style="padding-left: 10px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <p style="float: left; font-weight: bold;">{{comment.username}}:</p> 
+                        <p style="float: right; font-size: smaller; color: gray">{{comment.created}}</p>
+                    </div>
+                    {{comment.comment}}
+                </div>
+                <hr>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

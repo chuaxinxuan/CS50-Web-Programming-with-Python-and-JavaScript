@@ -1,0 +1,23 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+
+    {% for listing in listings %}
+        {% if listing.active %}
+            <div style="border: solid lightgrey 1px; margin-bottom: 10px; height: 300px; overflow: auto;">
+                <div style="width: 500px; float: left; text-align: center;">
+                    <img src={{listing.image_url}} alt="Listing image" style="height: 290px; max-width: 100%; object-fit: contain;">
+                </div>
+                <div style="margin-left: 520px; padding-top: 20px; padding-right: 20px;">
+                    <a href="{% url 'listing_page' listing.id %}">
+                        <h4>{{listing.title}}</h4>
+                        <h4>Price: ${{listing.current_bid}}</h4>
+                    </a>
+                    <br>
+                    {{listing.description}}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

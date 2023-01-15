@@ -1,0 +1,30 @@
+{% extends "planner/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <h3>Pending Invitations</h3>
+
+    <div class="alert alert-danger" role="alert" style="display: none;">Unable to accept invite, clash in schedule!</div>
+
+    {% if events %}
+        {% for event in events %}
+            <div class="card bg-light border-dark mb-3" style="margin-top: 10px">
+                <div class="card-header">
+                    <h4>{{ event.event.title }}</h4>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Organiser: {{event.event.created_by}}</li>
+                        <li>Date & Time: {{event.event.date}}, {{event.event.start_time}} to {{event.event.end_time}}</li>
+                        <li>Description: {{event.event.description}}</li>
+                    </ul>
+
+                    <button type="button" class="btn btn-success invite_button" data-id="{{event.event.id}}">Accept</button>
+                    <button type="button" class="btn btn-danger invite_button" data-id="{{event.event.id}}">Decline</button>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        There are no pending invites.
+    {% endif %}
+{% endblock %}

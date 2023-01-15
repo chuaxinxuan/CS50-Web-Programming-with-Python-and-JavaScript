@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>E-Planner</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'planner/styles.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="center">
+            <div id="welcome_header">Welcome to E-Planner</div>
+            <div style="margin-top: 8px;">
+                <div class="mission" id="mission1">All your plans on a single page.</div>
+                <div class="mission" id="mission2">Set up an event. Invite. Stay organized.</div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a class="btn btn-dark" role="button" href="{% url 'login' %}" style="font-size: 1.5vw; margin-right: 10vw;">
+                    Log In
+                </a>
+                <a class="btn btn-dark" role="button" href="{% url 'register' %}" style="font-size: 1.5vw;">
+                    Register
+                </a>
+            </div>
+        </div>
+
+        <div id="image_credit">
+            <a href="https://www.freepik.com/free-vector/pastel-vector-dull-pastel-abstract-textured-background_16240084.htm#query=pastel%20brown%20background&position=8&from_view=keyword">Image by rawpixel.com</a> on Freepik
+        </div>
+    </body>
+</html>
+

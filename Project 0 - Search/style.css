@@ -1,0 +1,95 @@
+.clickable_link {
+    text-align: right;
+    margin-right: 15px
+}
+.clickable_link li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.search_box {
+    width: 550px;
+    height: 40px;
+    border-radius: 25px;
+    border-color:gainsboro;
+    border-style: solid;
+    border-width: thin;
+    outline: none;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    background: url("C:/Users/chuax/OneDrive - National University of Singapore/NUS/YEAR 4 SEM 1/DYOM/CS50 Web Programming with Python and JavaScript/Projects/search/search-icon.png") left no-repeat;
+    background-size: 15px;
+    background-position: 15px;
+}
+
+.clickable_button {
+    background-color: #f7f7f7;
+    border-style: none;
+    padding: 8px 15px;
+    margin: 0px 8px;
+    border-radius: 5px;
+}
+.clickable_button:hover, .search_box:hover {
+    box-shadow: 0 0 3px 1px lightgray;
+}
+
+.advanced_search_form  { 
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+    padding-left: 40px;
+    float: left;
+}
+
+.advanced_search_div {
+    display: table-row;
+}
+
+.advanced_search_label { 
+    display: table-cell; 
+    padding-right: 40px;
+    font-size: 15px;
+}
+
+.advanced_search_box {
+    display: table-cell;
+    width: 550px;
+    height: 30px;
+    border-color:gainsboro;
+    border-style: solid;
+    border-width: thin;
+    outline-color:cornflowerblue;
+    padding-left: 5px;
+}
+
+.google_main_logo {
+    margin-top: 200px;
+    display: block;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.google_images_logo {
+    margin-top: 200px;
+    display: block;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.google_advanced_logo {
+    margin-top: 10px;
+    max-width: 90px;
+    margin-left: 15px;
+}
+
+.btn-light:hover {
+    color: white;
+}

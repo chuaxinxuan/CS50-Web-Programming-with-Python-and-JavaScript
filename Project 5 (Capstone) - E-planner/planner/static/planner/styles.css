@@ -1,0 +1,105 @@
+body {
+    background-image: url("../planner/images/rm301-gift-07.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#image_credit {
+    padding-right: 3px;
+    padding-bottom: 3px;
+    color: grey;
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#welcome_header {
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    font-size: 3.6vw;
+    color: white;
+    text-shadow: 5px 5px 0px rgb(58, 55, 55);
+}
+
+#center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.mission {
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    color: rgb(58, 55, 55);
+}
+#mission1 {
+    font-size: 2.6vw;
+}
+#mission2 {
+    font-size: 2.05vw;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        margin-top: 0px;
+        max-height: 0px;
+    }
+}
+.card {
+    margin-top: 0px;
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+
+.day_of_week {
+    text-align:center;
+}
+
+table.calender_table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table.calender_table th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table.calender_table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    vertical-align: top;
+    height: 130px;
+    overflow: hidden;
+}
+
+
+.event_summary {
+    background-color:deepskyblue; 
+    font-weight: bold; 
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    #month_year {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 1500px) {
+    #event_details_date {
+        font-size: 20px;
+    }
+}

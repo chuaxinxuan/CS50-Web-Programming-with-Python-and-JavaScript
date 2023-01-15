@@ -1,0 +1,328 @@
+{% extends "planner/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="container" style="margin: 0px; max-width: 100%;">
+        <div class="row">
+            <div class="col-lg-9">
+                <div style="background-color:grey; width: 100%; height: 60px; margin-bottom: 10px; display: flex;">
+                    <div style="width: 33.3%; float: left; text-align: center; padding-top: 10px; " >
+                        <button type="button" class="btn btn-dark" id="prev_button">Previous</button>
+                    </div>
+
+                    <h3 id="month_year" style="color: white; width: 33.3%; float: center; text-align: center; padding-top: 10px;">
+                        {{current_month}} {{current_year}}
+                    </h3>
+                
+                    <div style="width: 33.3%; float: right; text-align: center; padding-top: 10px; ">
+                        <button type="button" class="btn btn-dark" id="next_button">Next</button>
+                    </div>
+                </div>
+                <table class="calender_table" align="center" cellpadding="5" style="width: 100%; table-layout: fixed; margin-bottom: 10px;">
+                    <thead>
+                        <tr>
+                            <th class="day_of_week">Mon</th>
+                            <th class="day_of_week">Tue</th>
+                            <th class="day_of_week">Wed</th>
+                            <th class="day_of_week">Thurs</th>
+                            <th class="day_of_week">Fri</th>
+                            <th class="day_of_week">Sat</th>
+                            <th class="day_of_week">Sun</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-id="1">
+                                {{grid_1}} 
+                                {% for event in event_1 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="2">
+                                {{grid_2}}
+                                {% for event in event_2 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="3">
+                                {{grid_3}} 
+                                {% for event in event_3 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="4">
+                                {{grid_4}}
+                                {% for event in event_4 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="5">
+                                {{grid_5}}
+                                {% for event in event_5 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="6">
+                                {{grid_6}}
+                                {% for event in event_6 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="7">
+                                {{grid_7}}
+                                {% for event in event_7 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-id="8">
+                                {{grid_8}} 
+                                {% for event in event_8 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="9">
+                                {{grid_9}}
+                                {% for event in event_9 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="10">
+                                {{grid_10}} 
+                                {% for event in event_10 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="11">
+                                {{grid_11}}
+                                {% for event in event_11 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="12">
+                                {{grid_12}}
+                                {% for event in event_12 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="13">
+                                {{grid_13}}
+                                {% for event in event_13 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="14">
+                                {{grid_14}}
+                                {% for event in event_14 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-id="15">
+                                {{grid_15}} 
+                                {% for event in event_15 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="16">
+                                {{grid_16}}
+                                {% for event in event_16 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="17">
+                                {{grid_17}} 
+                                {% for event in event_17 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="18">
+                                {{grid_18}}
+                                {% for event in event_18 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="19">
+                                {{grid_19}}
+                                {% for event in event_19 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="20">
+                                {{grid_20}}
+                                {% for event in event_20 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="21">
+                                {{grid_21}}
+                                {% for event in event_21 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-id="22">
+                                {{grid_22}} 
+                                {% for event in event_22 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="23">
+                                {{grid_23}}
+                                {% for event in event_23 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="24">
+                                {{grid_24}} 
+                                {% for event in event_24 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="25">
+                                {{grid_25}}
+                                {% for event in event_25 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="26">
+                                {{grid_26}}
+                                {% for event in event_26 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="27">
+                                {{grid_27}}
+                                {% for event in event_27 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="28">
+                                {{grid_28}}
+                                {% for event in event_28 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-id="29">
+                                {{grid_29}} 
+                                {% for event in event_29 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="30">
+                                {{grid_30}}
+                                {% for event in event_30 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="31">
+                                {{grid_31}} 
+                                {% for event in event_31 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="32">
+                                {{grid_32}}
+                                {% for event in event_32 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="33">
+                                {{grid_33}}
+                                {% for event in event_33 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="34">
+                                {{grid_34}}
+                                {% for event in event_34 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="35">
+                                {{grid_35}}
+                                {% for event in event_35 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-id="36">
+                                {{grid_36}} 
+                                {% for event in event_36 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="37">
+                                {{grid_37}}
+                                {% for event in event_37 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="38">
+                                {{grid_38}} 
+                                {% for event in event_38 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="39">
+                                {{grid_39}}
+                                {% for event in event_39 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="40">
+                                {{grid_40}}
+                                {% for event in event_40 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="41">
+                                {{grid_41}}
+                                {% for event in event_41 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>
+                            <td data-id="42">
+                                {{grid_42}}
+                                {% for event in event_42 %}
+                                    <div class="event_summary">{{event.title}}</div>
+                                {% endfor %}
+                            </td>        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="col-lg">
+                <h3 id="event_details_date" style="text-align: center; background-color: grey; height: 60px; color: white; padding-top: 10px;">{{current_day}} {{current_month}} {{current_year}} Events:</h3>
+                <div id="event_details" style="border: 1px solid black; height: 815px; padding: 5px; overflow: scroll;">
+                    {% if today_events_len == 0 %}
+                        There are no events.
+                    {% else %}
+                        {% for event in today_events %}
+                            <div style="background-color:lavender; padding: 5px; margin: 5px; border-radius: 5px; border: 1px solid darkviolet;">
+                                <h5>{{event.title}}</h5>
+                                <ul>
+                                    <li>Organiser: {{event.created_by}}</li>
+                                    <li>Time: {{event.start_time}} to {{event.end_time}}</li>
+                                    <li>Description: {{event.description}}</li>
+                                </ul>
+                                {% if event.created_by == user %}
+                                    <a href="{% url 'delete_event' event.id %}" role="button" class="btn btn-dark" style="margin-left: 5px;">Delete</a>
+                                {% else %}
+                                    <a href="{% url 'reject_event' event.id %}" role="button" class="btn btn-danger" style="margin-left: 5px;">Reject</a>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
